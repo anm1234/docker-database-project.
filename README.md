@@ -66,9 +66,3 @@ INSERT INTO users (username, email) VALUES ('Charlie', 'charlie@cryptoconnect.co
 INSERT INTO wallets (user_id, wallet_name, balance) VALUES (3, 'Charlie_Wallet', 2.5);
 INSERT INTO transactions (wallet_id, crypto_id, transaction_type, amount) VALUES (3, 1, 'BUY', 0.75);
 
-6. Take screenshots for submission:
-- Docker container running (`docker compose up`)
-- \dt showing all tables
-- Data from users, wallets, cryptocurrencies, and transactions tables
-- Terminal logs showing `docker compose up`
-
