@@ -10,9 +10,10 @@ It automatically creates tables and populates them with sample data for users, w
 cryptoconnect-docker-db/
 ├── docker-compose.yml
 ├── init-db/
-│ ├── 01_create_tables.sql
-│ └── 02_insert_data.sql
+│   ├── 01_create_tables.sql
+│   └── 02_insert_data.sql
 └── README.md
+
 
 To start the database, open a terminal, navigate to the project folder, and run:
 
