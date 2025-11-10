@@ -24,19 +24,19 @@ Open a new terminal and run:
 docker exec -it cryptoconnect_db psql -U student -d cryptoconnect
 
 - List all tables:
----
+-
 \dt
----
+-
 - View table data:
 
 SELECT * FROM users;
----
+-
 SELECT * FROM wallets;
----
+-
 SELECT * FROM cryptocurrencies;
----
+-
 SELECT * FROM transactions;
----
+-
 
 - Exit psql:
 
