@@ -1,12 +1,9 @@
 # CryptoConnect Docker Database
 
 ## Overview
-This project runs the **CryptoConnect database** using Docker and PostgreSQL.  
-It automatically creates tables and populates them with sample data for users, wallets, cryptocurrencies, and transactions.
+This project runs the CryptoConnect database using Docker and PostgreSQL. It automatically creates tables and populates them with sample data for users, wallets, cryptocurrencies, and transactions.
 
----
-
-## Folder Structure
+## Project Folder Structure
 cryptoconnect-docker-db/
 ├── docker-compose.yml
 ├── init-db/
@@ -14,68 +11,64 @@ cryptoconnect-docker-db/
 │   └── 02_insert_data.sql
 └── README.md
 
+## How to Start, Stop, and Connect to the Database
 
-To start the database, open a terminal, navigate to the project folder, and run:
+### Start the Database
+Open a terminal and navigate to the project folder:
 
 cd path/to/cryptoconnect-docker-db
 docker compose up
 
-This will pull the PostgreSQL image if it is not already downloaded and automatically run SQL scripts in init-db/ to create tables and insert sample data.
+- Pulls the PostgreSQL image if not present.
+- Automatically runs SQL scripts in init-db/ to create tables and insert sample data.
 
-To connect to the database, open a new terminal and run:
+### Connect to the Database
+Open a new terminal and run:
 
 docker exec -it cryptoconnect_db psql -U student -d cryptoconnect
 
-Inside psql, you can list all tables using \dt and view data using:
+- List all tables:
+
+\dt
+
+- View table data:
 
 SELECT * FROM users;
 SELECT * FROM wallets;
 SELECT * FROM cryptocurrencies;
 SELECT * FROM transactions;
 
-To exit psql, type \q.
+- Exit psql:
 
-To stop the database, run:
+\q
+
+### Stop the Database
 
 docker compose down
 
-Optionally, to remove all volumes and reset the database, run:
+## Verification Steps for D3 Deliverable
+1. Start the database with `docker compose up`.
+2. Connect using `docker exec -it cryptoconnect_db psql -U student -d cryptoconnect`.
+3. Verify tables exist:
 
-docker compose down -v
+\dt
 
-The default credentials are:
-User: student
-Password: student123
-Database: cryptoconnect
-Port: 5432
-
-For verification for the D3 deliverable, follow these steps:
-
-Start the database with docker compose up.
-
-Connect using docker exec -it cryptoconnect_db psql -U student -d cryptoconnect.
-
-Verify tables exist using \dt.
-
-Verify initial data with:
+4. Verify initial data:
 
 SELECT * FROM users;
 SELECT * FROM wallets;
 SELECT * FROM cryptocurrencies;
 SELECT * FROM transactions;
 
-Optional: Insert sample data to test:
+5. Optional: Insert sample data:
 
-INSERT INTO users (username, email) VALUES ('Charlie', 'charlie@cryptoconnect.com
-');
+INSERT INTO users (username, email) VALUES ('Charlie', 'charlie@cryptoconnect.com');
 INSERT INTO wallets (user_id, wallet_name, balance) VALUES (3, 'Charlie_Wallet', 2.5);
 INSERT INTO transactions (wallet_id, crypto_id, transaction_type, amount) VALUES (3, 1, 'BUY', 0.75);
 
+6. Take screenshots for submission:
+- Docker container running (`docker compose up`)
+- \dt showing all tables
+- Data from users, wallets, cryptocurrencies, and transactions tables
+- Terminal logs showing `docker compose up`
 
-\dt showing all tables
-
-Data from users, wallets, cryptocurrencies, and transactions tables
-
-Terminal logs showing docker compose up
-
-This README fully covers starting, stopping, connecting to the database, verifying tables and data, and submission guidance for the D3 deliverable.
