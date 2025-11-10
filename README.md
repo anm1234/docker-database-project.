@@ -4,7 +4,8 @@
 This project runs the CryptoConnect database using Docker and PostgreSQL. It automatically creates tables and populates them with sample data for users, wallets, cryptocurrencies, and transactions.
 
 ## Project Folder Structure
-![File System Diagram](https://github.com/anm1234/docker-database-project/raw/main/file_system.png)
+![File System Diagram](./file_system.png)
+
 
 ## How to Start, Stop, and Connect to the Database
 
