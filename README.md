@@ -13,6 +13,7 @@ This project runs the CryptoConnect database using Docker and PostgreSQL. It aut
 Open a terminal and navigate to the project folder:
 
 cd path/to/cryptoconnect-docker-db
+--------------------------------
 docker compose up
 
 - Pulls the PostgreSQL image if not present.
